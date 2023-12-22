@@ -8,8 +8,8 @@
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
-# Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+# Inherit some common rising stuff.
+$(call inherit-product, vendor/rising/config/rising.mk)
 
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/device.mk)
@@ -28,12 +28,12 @@ TARGET_ENABLE_BLUR := true
 TARGET_EXCLUDES_AUDIOFX := true
 TARGET_FACE_UNLOCK_SUPPORTED := true
 
-#Matrixx Maintainer Info
-MATRIXX_MAINTAINER := Amrutesh
-MATRIXX_CHIPSET := Snapdragon®870
-MATRIXX_BATTERY := 8840mAh
-MATRIXX_DISPLAY := 2880x1800
-EXTRA_UDFPS_ANIMATIONS := true
+#RisingOS info
+RISING_CHIPSET := Snapdragon®870
+RISING_MAINTAINER := Amrutesh
+TARGET_PREBUILT_PIXEL_LAUNCHER := false
+WITH_GMS :=true
+TARGET_ENABLE_BLUR := true
 
 PRODUCT_CHARACTERISTICS := tablet
 

@@ -8,7 +8,7 @@ echo 'cloning common vendor'
 git clone https://github.com/DragonEmperor9480/proprietary_vendor_xiaomi_sm8250-common.git vendor/xiaomi/sm8250-common
 
 echo 'cloning kernel'
-git clone https://github.com/DragonEmperor9480/android_kernel_xiaomi_sm8250.git kernel/xiaomi/sm8250 --depth=1
+git clone https://github.com/crdroidandroid/android_kernel_xiaomi_sm8250.git -b 14.0-pipa kernel/xiaomi/sm8250 --depth=1
 
 echo 'cloning xiaomi hals'
 git clone https://github.com/DragonEmperor9480/android_hardware_xiaomi.git hardware/xiaomi
