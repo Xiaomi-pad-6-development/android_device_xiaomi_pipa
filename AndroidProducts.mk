@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/derp_pipa.mk
+    $(LOCAL_DIR)/aosp_pipa.mk
 
 COMMON_LUNCH_CHOICES := \
-    derp_pipa-user \
-    derp_pipa-userdebug \
-    derp_pipa-eng
+    aosp_pipa-user \
+    aosp_pipa-userdebug \
+    aosp_pipa-eng
