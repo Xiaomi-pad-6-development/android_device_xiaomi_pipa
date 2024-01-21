@@ -9,31 +9,34 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/derp/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/superior/config/common_full_tablet_wifionly.mk)
 
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
-PRODUCT_NAME := lineage_pipa
+PRODUCT_NAME := superior_pipa
 PRODUCT_DEVICE := pipa
 PRODUCT_MANUFACTURER := Xiaomi
-PRODUCT_BRAND := Xiaomi
-PRODUCT_MODEL := Pad 6
 
-#GMS
-WITH_GAPPS := true
+#Superior Extended
+TARGET_SHIPS_PREBUILT_GCAM := false
+TARGET_INCLUDE_MATLOG := false
+USE_MOTO_CALCULATOR := false
+TARGET_SUPPORTS_BLUR := true
+SUPERIOR_UDFPS_ANIMATIONS := false
+USE_MOTO_CLOCK := false
+SYSTEM_OPTIMIZE_JAVA := true
+SYSTEMUI_OPTIMIZE_JAVA := true
+BUILD_WITH_GAPPS := true
+USE_QUICKPIC := true
+USE_DUCKDUCKGO := false
+USE_ViaBrowser := false
+TARGET_BUILD_VIMUSIC := false
 
-#OS stuff
-TARGET_ENABLE_BLUR := true
-TARGET_EXCLUDES_AUDIOFX := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
-
-#Matrixx Maintainer Info
-MATRIXX_MAINTAINER := Amrutesh
-MATRIXX_CHIPSET := Snapdragon®870
-MATRIXX_BATTERY := 8840mAh
-MATRIXX_DISPLAY := 2880x1800
-EXTRA_UDFPS_ANIMATIONS := true
+#Maintainer
+# Maintainer
+PRODUCT_SYSTEM_PROPERTIES += \
+       ro.spos.maintainer=Amrutesh
 
 PRODUCT_CHARACTERISTICS := tablet
 
