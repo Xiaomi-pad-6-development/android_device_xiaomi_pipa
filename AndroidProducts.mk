@@ -5,9 +5,9 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/aosp_pipa.mk
+    $(LOCAL_DIR)/banana_pipa.mk
 
 COMMON_LUNCH_CHOICES := \
-    aosp_pipa-user \
-    aosp_pipa-userdebug \
-    aosp_pipa-eng
+    banana_pipa-user \
+    banana_pipa-userdebug \
+    banana_pipa-eng

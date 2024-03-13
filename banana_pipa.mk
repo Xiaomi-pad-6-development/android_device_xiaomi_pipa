@@ -9,31 +9,29 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/aosp/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/banana/config/common_full_tablet_wifionly.mk)
 
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/device.mk)
 
-PRODUCT_NAME := lineage_pipa
+PRODUCT_NAME := banana_pipa
 PRODUCT_DEVICE := pipa
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Pad 6
 
-#GMS
+# Debugging
+TARGET_INCLUDE_MATLOG := false
+TARGET_DEFAULT_ADB_ENABLED := true
+
+# BananaDroid
 WITH_GAPPS := true
-
-#OS stuff
+TARGET_BOOT_ANIMATION_RES := 1080
 TARGET_ENABLE_BLUR := true
-TARGET_EXCLUDES_AUDIOFX := true
-TARGET_FACE_UNLOCK_SUPPORTED := true
 
-#Matrixx Maintainer Info
-MATRIXX_MAINTAINER := Amrutesh
-MATRIXX_CHIPSET := Snapdragon®870
-MATRIXX_BATTERY := 8840mAh
-MATRIXX_DISPLAY := 2880x1800
-EXTRA_UDFPS_ANIMATIONS := true
+PRODUCT_SYSTEM_PROPERTIES += \
+    ro.banana.maintainer=Amrutesh \
+    ro.face.sense_service.camera_id=1
 
 PRODUCT_CHARACTERISTICS := tablet
 
