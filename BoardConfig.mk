@@ -78,6 +78,9 @@ TARGET_SCREEN_DENSITY := 400
 # Filesystem
 TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/config.fs
 
+# Firmware
+include vendor/xiaomi/pipa-firmware/BoardConfigVendor.mk
+
 # HWUI
 HWUI_COMPILE_FOR_PERF := true
 
