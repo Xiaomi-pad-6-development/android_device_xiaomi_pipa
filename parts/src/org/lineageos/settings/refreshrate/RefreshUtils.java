@@ -42,7 +42,7 @@ public final class RefreshUtils {
     protected static final int STATE_EXTREME = 3;
     protected static final int STATE_ULTRA = 4;
 
-    private static final float REFRESH_STATE_DEFAULT = 120f;
+    private static final float REFRESH_STATE_DEFAULT = 144f;
     private static final float REFRESH_STATE_STANDARD = 60f;
     private static final float REFRESH_STATE_HIGH = 90f;
     private static final float REFRESH_STATE_EXTREME = 120f;
