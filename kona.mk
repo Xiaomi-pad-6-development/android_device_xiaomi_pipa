@@ -372,6 +372,12 @@ PRODUCT_PACKAGES += \
     init.xiaomi.rc \
     ueventd.qcom.rc
 
+# Platform
+BOARD_VENDOR := xiaomi
+BOARD_USES_QCOM_HARDWARE := true
+TARGET_BOARD_PLATFORM := kona
+TARGET_PROVIDES_POWERHAL := true
+
 # Sensors
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl-xiaomi \

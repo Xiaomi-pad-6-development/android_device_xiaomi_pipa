@@ -17,4 +17,8 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Whether to show Smooth Display feature in Settings Options -->
     <bool name="config_show_smooth_display">true</bool>
+
+    <!-- Device Maintainer Strings -->
+    <string name="maintainer_name" translatable="false">Aryan</string>
+    <string name="maintainer_telegram" translatable="false">https://t.me/CuriousNom</string>
 </resources>

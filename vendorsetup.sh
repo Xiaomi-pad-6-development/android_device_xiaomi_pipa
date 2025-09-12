@@ -21,7 +21,7 @@ done
 
 # Hardware/xiaomi
 HW_XIAOMI_DIR="hardware/xiaomi"
-HW_FORK_REPO="https://github.com/Matrixx-Devices/android_hardware_xiaomi.git"
+HW_FORK_REPO="https://github.com/CuriousNom/hardware_xiaomi"
 
 if [ -d "$HW_XIAOMI_DIR" ]; then
     # Check if it's the fork repo
@@ -57,7 +57,7 @@ fi
 
 # Display HAL
 DISPLAY_HAL_DIR="hardware/qcom-caf/sm8250/display"
-DISPLAY_HAL_REPO="https://github.com/Matrixx-Devices/android_hardware_qcom-caf_sm8250_display.git"
+DISPLAY_HAL_REPO="https://github.com/CuriousNom/hardware_qcom-caf_sm8250_display"
 
 if [ -d "$DISPLAY_HAL_DIR" ]; then
     # Check if it's the correct repo

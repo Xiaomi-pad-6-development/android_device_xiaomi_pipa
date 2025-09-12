@@ -123,13 +123,38 @@ BOARD_SUPER_PARTITION_GROUPS := qti_dynamic_partitions
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := $(ALL_PARTITIONS)
 BOARD_QTI_DYNAMIC_PARTITIONS_SIZE := 9122611200 # (BOARD_SUPER_PARTITION_SIZE - 4MiB)
 
-# Partitions - reserved size
--include vendor/lineage/config/BoardConfigReservedSize.mk
+ifeq ($(PRODUCT_VIRTUAL_AB_OTA),true)
+    BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE ?= true
+endif
 
-# Platform
-BOARD_VENDOR := xiaomi
-BOARD_USES_QCOM_HARDWARE := true
-TARGET_BOARD_PLATFORM := kona
+ifeq (,$(filter true, $(WITHOUT_RESERVED_SIZE) $(WITH_GMS)))
+    BOARD_PRODUCTIMAGE_EXTFS_INODE_COUNT ?= -1
+
+    ifeq ($(BOARD_PRODUCTIMAGE_MINIMAL_PARTITION_RESERVED_SIZE),true)
+        ifeq ($(PRODUCT_IS_ATV),true)
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 450000000
+        else
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1188036608
+        endif
+    else
+        ifeq ($(PRODUCT_IS_ATV),true)
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 470000000
+        else
+            BOARD_PRODUCTIMAGE_PARTITION_RESERVED_SIZE ?= 1957691392
+        endif
+    endif
+
+    BOARD_SYSTEMIMAGE_EXTFS_INODE_COUNT ?= -1
+    ifeq ($(PRODUCT_IS_ATV),true)
+        BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE ?= 40000000
+        BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE ?= 27000000
+    else
+        BOARD_SYSTEM_EXTIMAGE_EXTFS_INODE_COUNT ?= -1
+        BOARD_SYSTEMIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
+        BOARD_SYSTEM_EXTIMAGE_PARTITION_RESERVED_SIZE ?= 94371840
+    endif
+
+endif
 
 # Properties
 TARGET_ODM_PROP += $(DEVICE_PATH)/odm.prop
@@ -176,7 +201,7 @@ DEVICE_FRAMEWORK_COMPATIBILITY_MATRIX_FILE := \
     $(DEVICE_PATH)/framework_compatibility_matrix.xml \
     hardware/qcom-caf/common/vendor_framework_compatibility_matrix.xml \
     hardware/xiaomi/vintf/xiaomi_framework_compatibility_matrix.xml \
-    vendor/lineage/config/device_framework_matrix.xml
+    vendor/yaap/config/device_framework_matrix.xml
 DEVICE_MANIFEST_FILE += $(DEVICE_PATH)/manifest.xml
 DEVICE_MATRIX_FILE += hardware/qcom-caf/common/compatibility_matrix.xml
 
