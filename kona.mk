@@ -257,12 +257,6 @@ PRODUCT_PACKAGES += \
 # Kernel
 PRODUCT_SET_DEBUGFS_RESTRICTIONS := true
 
-# Lineage Health
-PRODUCT_PACKAGES += \
-    vendor.lineage.health-service.default
-
-$(call soong_config_set,lineage_health,charging_control_supports_bypass,false)
-
 # Logging
 SPAMMY_LOG_TAGS := \
      AsyncOperation \
