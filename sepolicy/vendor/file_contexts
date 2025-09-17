@@ -53,6 +53,9 @@
 # Pen
 /vendor/bin/xiaomi-pen		                                                                        u:object_r:xiaomi_pen_exec:s0
 
+# Power
+/vendor/bin/hw/android\.hardware\.power-service\.pixel-libperfmgr    u:object_r:hal_power_default_exec:s0
+
 # Persist subsystem
 /mnt/vendor/persist/subsys(/.*)?                                                                    u:object_r:vendor_persist_subsys_file:s0
 
