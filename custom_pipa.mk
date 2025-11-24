@@ -9,7 +9,7 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/custom/config/common_full_tablet_wifionly.mk)
 
 # Blur UI
 TARGET_ENABLE_BLUR := true
@@ -23,7 +23,7 @@ WITH_GMS := true
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/kona.mk)
 
-PRODUCT_NAME := lineage_pipa
+PRODUCT_NAME := aosp_pipa
 PRODUCT_DEVICE := pipa
 PRODUCT_MANUFACTURER := Xiaomi
 PRODUCT_BRAND := Xiaomi
