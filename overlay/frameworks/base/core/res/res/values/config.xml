@@ -245,10 +245,10 @@
     <string name="db_wal_sync_mode" translatable="false">OFF</string>
 
     <!-- Whether the device enable the standalone (SA) mode of 5G NR.-->
-    <bool name="config_telephony5gStandalone">true</bool>
+    <bool name="config_telephony5gStandalone">false</bool>
 
     <!-- Whether the device enable the non-standalone (NSA) mode of 5G NR.-->
-    <bool name="config_telephony5gNonStandalone">true</bool>
+    <bool name="config_telephony5gNonStandalone">false</bool>
 
      <!-- Flag indicating whether the we should enable the automatic brightness in Settings.
          Software implementation will be used if config_hardware_auto_brightness_available is not set -->
