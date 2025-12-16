@@ -246,7 +246,6 @@ ifneq ($(TARGET_IS_VAB),true)
 PRODUCT_PACKAGES += \
     android.hardware.health-service.qti_recovery
 endif
->>>>>>> a92c945 (sm8250-common: Mirgrate to lineagehealth IFastCharge)
 
 # HotwordEnrollement app permissions
 PRODUCT_COPY_FILES += \
