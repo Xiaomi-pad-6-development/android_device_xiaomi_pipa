@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/custom_pipa.mk
+    $(LOCAL_DIR)/lineage_pipa.mk

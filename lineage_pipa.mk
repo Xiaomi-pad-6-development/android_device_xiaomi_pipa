@@ -9,7 +9,13 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base.mk)
 
 # Inherit some common lineage stuff.
-$(call inherit-product, vendor/custom/config/common_full_tablet_wifionly.mk)
+$(call inherit-product, vendor/lineage/config/common_full_tablet_wifionly.mk)
+
+#aviumui stuff
+AVIUM_BUILDTYPE := Unoffical
+AVIUM_VERSION_APPEND_TIME_OF_DAY := true
+TARGET_GMS_TYPE := MINI
+AVIUM_MAINTAINER := Amrutesh
 
 # Blur UI
 TARGET_ENABLE_BLUR := true
