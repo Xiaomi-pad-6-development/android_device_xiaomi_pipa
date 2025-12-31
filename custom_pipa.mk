@@ -20,6 +20,11 @@ BYPASS_CHARGE_SUPPORTED := true
 # GMS
 WITH_GMS := true
 
+#ascp flags
+ASCP_MAINTAINER = Amrutesh
+WITH_BCR := false
+ASCP_OFFICIAL := true
+
 # Inherit from pipa device
 $(call inherit-product, device/xiaomi/pipa/kona.mk)
 
