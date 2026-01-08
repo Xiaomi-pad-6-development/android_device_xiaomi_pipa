@@ -1,3 +1,11 @@
+#Kamisato AOSP props
+ro.kamisato.device=Xiaomi Pad 6
+ro.kamisato.maintainer=Amrutesh
+ro.kamisato.soc=Snapdragon 870
+ro.kamisato.display=2880 x 1800 144Hz
+ro.kamisato.frontcam=8MP
+ro.kamisato.backcam=13MP
+
 # Baseband
 gsm.version.baseband?=Wi-Fi Only
 
