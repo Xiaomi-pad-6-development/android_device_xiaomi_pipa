@@ -24,13 +24,14 @@ import android.widget.Toast;
 
 import androidx.preference.ListPreference;
 import androidx.preference.Preference;
-import androidx.preference.PreferenceFragmentCompat;
 import androidx.preference.SeekBarPreference;
 import androidx.preference.SwitchPreferenceCompat;
 
+import com.android.settingslib.widget.SettingsBasePreferenceFragment;
+
 import org.lineageos.settings.R;
 
-public class GameOverlayFragment extends PreferenceFragmentCompat {
+public class GameOverlayFragment extends SettingsBasePreferenceFragment {
 
     private GameOverlay mOverlay;
 
