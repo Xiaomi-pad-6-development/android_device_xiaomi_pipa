@@ -1,0 +1,44 @@
+diff --git a/packages/SystemUI/shared/src/com/android/systemui/shared/system/BlurUtils.java b/packages/SystemUI/shared/src/com/android/systemui/shared/system/BlurUtils.java
+index 61b0e4d90..14f7630ed 100644
+--- a/packages/SystemUI/shared/src/com/android/systemui/shared/system/BlurUtils.java
++++ b/packages/SystemUI/shared/src/com/android/systemui/shared/system/BlurUtils.java
+@@ -29,7 +29,6 @@ public abstract class BlurUtils {
+      * @return {@code true} when supported.
+      */
+     public static boolean supportsBlursOnWindows() {
+-        return CROSS_WINDOW_BLUR_SUPPORTED && ActivityManager.isHighEndGfx()
+-                && !SystemProperties.getBoolean("persist.sysui.disableBlur", false);
++        return CROSS_WINDOW_BLUR_SUPPORTED;
+     }
+ }
+diff --git a/packages/SystemUI/src/com/android/systemui/statusbar/BlurUtils.kt b/packages/SystemUI/src/com/android/systemui/statusbar/BlurUtils.kt
+index f4d457e6d..b9e766ee0 100644
+--- a/packages/SystemUI/src/com/android/systemui/statusbar/BlurUtils.kt
++++ b/packages/SystemUI/src/com/android/systemui/statusbar/BlurUtils.kt
+@@ -256,8 +256,8 @@ constructor(
+ 
+     private fun supportsBlursOnWindowsBase(): Boolean {
+         return CROSS_WINDOW_BLUR_SUPPORTED &&
+-            ActivityManager.isHighEndGfx() &&
+-            !SystemProperties.getBoolean("persist.sysui.disableBlur", false)
++            true &&
++            true
+     }
+ 
+     override fun dump(pw: PrintWriter, args: Array<out String>) {
+diff --git a/packages/SystemUI/src/com/android/systemui/window/data/repository/WindowRootViewBlurRepository.kt b/packages/SystemUI/src/com/android/systemui/window/data/repository/WindowRootViewBlurRepository.kt
+index 5fc5937ba..1f2968573 100644
+--- a/packages/SystemUI/src/com/android/systemui/window/data/repository/WindowRootViewBlurRepository.kt
++++ b/packages/SystemUI/src/com/android/systemui/window/data/repository/WindowRootViewBlurRepository.kt
+@@ -97,7 +97,7 @@ constructor(
+     override var blurAppliedListener: BlurAppliedListener? = null
+ 
+     private fun isBlurAllowed(): Boolean {
+-        return ActivityManager.isHighEndGfx() && !isDisableBlurSysPropSet()
++        return true
+     }
+ 
+     companion object {
+-- 
+2.52.0
+
